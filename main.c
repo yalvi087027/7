@@ -23,12 +23,13 @@ int poisk(int* a, int r,int l, int b)
         return poisk(a,r,m,b);
     }else
     {
-        return poisk(a,m,l,b);
+        return poisk(a,m+1,l,b);
     }
 
 }
-void func(int *a, int n, int *b, int m, int* c)
+int* func(int *a, int n, int *b, int m)
 {
+    int* c = malloc((m+n)*sizeof(int));
     int l = 0, r = 0, k = 0;
     while(l < n && r < m)
     {
@@ -64,6 +65,7 @@ void func(int *a, int n, int *b, int m, int* c)
             r+=1;
         }
     }
+    return c;
 }
 
 int main()
@@ -129,6 +131,7 @@ int main()
             {
                 printf("etot element imeet v massive nomer %d",indeks);
             }
+            printf("\n");
         }
         if (nomer == 6)
         {
@@ -150,12 +153,10 @@ int main()
                 printf("a[%d]=", i);
                 scanf("%d", &b[i]);
             }
-            int* c = malloc((m + n) * sizeof(int));
-            func(a,n,b,m,c);
+            int* c = func(a,n,b,m);
             for (int i = 0; i < n+m; ++i)
                 printf("%d ", c[i]);
         }
-        nomer=0;
     }
     return 0;
 }
