@@ -71,11 +71,10 @@ int* func(int *a, int n, int *b, int m)
 int main()
 {
     int nomer;
-
-    printf("\nvvedite nomer zadachi:\n");
-    scanf("%d", &nomer);
     while(1)
     {
+        printf("\nvvedite nomer zadachi:\n");
+        scanf("%d", &nomer);
         if (nomer == 3)
         {
             int n;
